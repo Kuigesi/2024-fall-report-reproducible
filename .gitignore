@@ -3,5 +3,14 @@ node_modules
 
 rhyme
 taco
+json
+
+*.json
+
+*.tns
+
+*.out
+
+*.log
 
 .vscode

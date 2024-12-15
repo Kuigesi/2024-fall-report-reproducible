@@ -56,5 +56,5 @@ int main(int argc, char* argv[]) {
   }
 
   std::cout << "res: " << A.begin()->second << std::endl;
-  std::cout << "Iterations: " << IT_NUM <<  "Time taken : " << total_time << " microseconds" << std::endl;
+  std::cout << "Iterations: " << IT_NUM <<  " Time taken : " << total_time << " microseconds" << std::endl;
 }

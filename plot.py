@@ -4,8 +4,48 @@ import matplotlib.pyplot as plt
 import numpy as np
 import csv
 
-rhymet = 20.59
-tacot = 17.77
+with open('rhyme.log', 'r') as file:
+    rhymeTime = file.read()
+
+with open('taco.log', 'r') as file:
+    tacoTime = file.read()
+
+pattern = r"res:\s*(-?\d+)\s+Iterations:\s*(\d+)\s+Time taken\s*:\s*(-?\d+\.\d+|-?\d+)\s+microseconds"
+
+match = re.search(pattern, rhymeTime)
+
+if match:
+    r_res_value = int(match.group(1))
+    r_iterations = int(match.group(2))
+    r_time_taken = float(match.group(3))
+
+    print(f"Iterations: {r_iterations}")
+    print(f"Time taken: {r_time_taken} microseconds")
+
+    rhymet = round((r_time_taken / float(r_iterations)) / 1000, 2)
+    print(f"Average Rhyme time: {rhymet} ms")
+else:
+    print(f"Rhyme time un match.")
+
+match = re.search(pattern, tacoTime)
+
+if match:
+    t_res_value = int(match.group(1))
+    t_iterations = int(match.group(2))
+    t_time_taken = float(match.group(3))
+
+    print(f"Iterations: {t_iterations}")
+    print(f"Time taken: {t_time_taken} microseconds")
+
+    tacot = round((t_time_taken / float(t_iterations)) / 1000, 2)
+    print(f"Average TACO time: {tacot} ms")
+else:
+    print(f"Rhyme time un match.")
+
+if r_res_value != t_res_value:
+    print(f"\nRhyme and TACO result not match")
+else:
+    print(f"\nRhyme and TACO result match")
 
 x = ["Rhyme", "TACO"]
 y_time = [rhymet, tacot]

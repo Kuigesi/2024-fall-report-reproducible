@@ -6,10 +6,10 @@ using namespace  std::chrono;
 #define IT_NUM 10
 
 int main() {
-    CSVector<int, int> B = read_1D_sparse_tensor<int, int>("cgen/B.json");
-    CSVector<int, int> C = read_1D_sparse_tensor<int, int>("cgen/C.json");
-    CSVector<int, int> D = read_1D_sparse_tensor<int, int>("cgen/D.json");
-    CSVector<int, int> E = read_1D_sparse_tensor<int, int>("cgen/E.json");
+    CSVector<int, int> B = read_1D_sparse_tensor<int, int>("B.json");
+    CSVector<int, int> C = read_1D_sparse_tensor<int, int>("C.json");
+    CSVector<int, int> D = read_1D_sparse_tensor<int, int>("D.json");
+    CSVector<int, int> E = read_1D_sparse_tensor<int, int>("E.json");
 
     int tmp0 = 0;
     double total_time = 0.0;
@@ -28,5 +28,5 @@ int main() {
     //write_result(res);
 
     std::cout << "res: " << res << std::endl;
-    std::cout << "Iterations: " << IT_NUM <<  "Time taken : " << total_time << " microseconds" << std::endl;
+    std::cout << "Iterations: " << IT_NUM <<  " Time taken : " << total_time << " microseconds" << std::endl;
 }
