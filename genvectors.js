@@ -1,5 +1,7 @@
 const fs = require('node:fs')
 
+const input_sparsity = parseFloat(process.argv[2]);
+
 function sampleDistinctPercentile(percentile, N) {
   if (percentile < 0 || percentile > 1) {
       throw new Error("Percentile must be between 0 and 1.");
@@ -25,7 +27,8 @@ function randomInteger(min, max) {
 }
 
 let ARRAY_LEN = 10000000
-let density = 0.1
+let density = input_sparsity / 100
+
 let MAX_NUM = 10000
 
 

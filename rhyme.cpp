@@ -28,5 +28,5 @@ int main() {
     //write_result(res);
 
     std::cout << "res: " << res << std::endl;
-    std::cout << "Iterations: " << IT_NUM <<  " Time taken : " << total_time << " microseconds" << std::endl;
+    std::cout << "Iterations: " << IT_NUM <<  " Time taken : " << (long)total_time << " microseconds" << std::endl;
 }
